@@ -1,0 +1,7 @@
+{
+    "host": "http://ictg.cosc.canterbury.ac.nz:8001/",
+	"session_params": "server=adapt2&request=scode",
+	"problem_params": "server=adapt2&request=problem",
+	"secret_word": "problemaidcatpgt",
+	"error_message": "Our fault. Please contact to PAWS lab with following error: "
+}

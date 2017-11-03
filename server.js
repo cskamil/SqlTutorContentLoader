@@ -18,8 +18,8 @@ SQLTUTOR.prototype.configureExpress = function() {
 }
 
 SQLTUTOR.prototype.startServer = function() {
-	app.listen(4000,function(){
-	  console.log("All right ! I am alive at Port 4000.");
+	app.listen(4001,function(){
+	  console.log("All right ! I am alive at Port 4001.");
 	});
 }
 
