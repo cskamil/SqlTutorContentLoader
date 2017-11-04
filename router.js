@@ -9,7 +9,7 @@ var cache = require('./cache')
 var router = express.Router();
 
 router.get("/content",function(req, res) {
-	let user = req.query.user
+	let user = req.query.usr
 
 	cache.get(user).then(function(cached_session) {
 		if(cached_session) {
@@ -47,7 +47,13 @@ function requestSession(request, response, user) {
 }
 
 function getRedirectContentURL(codeid, hashCode, request) {
-	return config('host') + "?" + config('problem_params') + '&codeid=' + codeid + '&hcode=' + hashCode + '&' + url.parse(request.url).query
+	let problemNumber = request.query.problem	
+	let user = request.query.usr
+	let group = request.query.grp
+	let sessionId = request.query.sid
+	let svc = request.query.svc
+	
+	return config('host') + "?" + config('problem_params') + '&problem=' + problemNumber + '&codeid=' + codeid + '&hcode=' + hashCode + '&user=' + user + '&group=' + group + '&sid=' + sessionId + '&svc=' + svc
 }
 
 /*TO CHECK IF API WORKS*/
